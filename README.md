@@ -68,7 +68,7 @@ yarn deploy \
     --network localhost
 ```
 
-yarn deploy --name MySBT --symbol MSBT --base-uri "https://www.readyplayerclub.com/api/rpc-badge/" --network ethereumSepolia
+yarn deploy --name rpcTestSBT --symbol RTST --base-uri "https://dev.readyplayerclub.com/api/rpc-sbt/" --network ethereumSepolia
 
 ### Output
 
@@ -109,6 +109,9 @@ yarn mint \
 ```
 
 yarn mint --address 0x7AEc00E76ED7533A22351ef3B99c0898cC1203Ad --to 0x1d9136fa6c577aDBf437dB4e63dc216D331289e6 --token-id 2 --network ethereumSepolia
+
+yarn mint --address 0xf405B7081f9dA5a99708E91cf08b51fAcAe3E8d6 --to 0x1d9136fa6c577aDBf437dB4e63dc216D331289e6 --token-id 1 --network ethereumSepolia
+
 
 ### Output
 
