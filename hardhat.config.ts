@@ -6,28 +6,26 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const ETHEREUM_SEPOLIA_RPC_URL = process.env.ETHEREUM_SEPOLIA_RPC_URL;
+const ETHEREUM_RPC_URL = process.env.ETHEREUM_RPC_URL;
+
 const commonConfig = {
-  gas: 5_000_000,
-  accounts: {
-    mnemonic: process.env.MNEMONIC || ''
-  }
+  accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
 }
 
 const config: HardhatUserConfig = {
   solidity: '0.8.16',
   networks: {
-    localhost: {
-      gas: 1_400_000
-    },
-    baobab: {
-      url: 'https://api.baobab.klaytn.net:8651',
+    ethereum: {
+      url: ETHEREUM_RPC_URL !== undefined ? ETHEREUM_RPC_URL : '',
+      chainId: 1,
       ...commonConfig,
-      gasPrice: 250_000_000_000
     },
-    cypress: {
-      url: 'https://public-en-cypress.klaytn.net',
+    ethereumSepolia: {
+      url: ETHEREUM_SEPOLIA_RPC_URL !== undefined ? ETHEREUM_SEPOLIA_RPC_URL : '',
+      chainId: 11155111,
       ...commonConfig,
-      gasPrice: 250_000_000_000
     }
   }
 }
