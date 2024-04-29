@@ -9,6 +9,7 @@ dotenv.config()
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ETHEREUM_SEPOLIA_RPC_URL = process.env.ETHEREUM_SEPOLIA_RPC_URL;
 const ETHEREUM_RPC_URL = process.env.ETHEREUM_RPC_URL;
+const MATIC_RPC_URL = process.env.MATIC_RPC_URL
 
 const commonConfig = {
   accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
@@ -25,6 +26,11 @@ const config: HardhatUserConfig = {
     ethereumSepolia: {
       url: ETHEREUM_SEPOLIA_RPC_URL !== undefined ? ETHEREUM_SEPOLIA_RPC_URL : '',
       chainId: 11155111,
+      ...commonConfig,
+    },
+    matic: {
+      url: MATIC_RPC_URL !== undefined ? MATIC_RPC_URL : '',
+      chainId: 137,
       ...commonConfig,
     }
   }
