@@ -123,6 +123,10 @@ yarn mint --address 0x356895083d7d8cC98AD935698ad21FEeB7780a17 --to 0xB3506D27B8
 
 yarn mint --address 0x19376d02631Cef85098bCf671FC347dD6479cD05 --to 0x1d9136fa6c577aDBf437dB4e63dc216D331289e6 --token-id 0 --network matic
 
+yarn mint --address 0x19376d02631Cef85098bCf671FC347dD6479cD05 --to 0x9753a6122349933f933c0fe6200E67BBB1199C09 --token-id 1 --network matic
+
+
+
 
 
 
